@@ -8,7 +8,7 @@ class Category < ApplicationRecord
     end
 
     def songs
-        Song.joins(:album).where(album: { id: self.albums.ids }).distinct
+        Song.joins(:album).where(songs: { id: self.albums.ids }).distinct
     end
 end
 
