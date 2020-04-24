@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         resources :dashboard, only: :index
         resources :categories, only: %i[index show]
         resources :search, only: :index
+        resources :albums, only: :show
         
     end 
   end
