@@ -3,6 +3,14 @@ Rails.application.routes.draw do
   get 'home/index'
   root "home#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+ 
+  concern :favoritable do |options|
+    shallow do
+      post "/favorite", { to: "favorites#create", on: :member }.merge(options)
+      delete "/favorite", { to: "favorites#destroy", on: :member }.merge(options)
+    end
+  end
+
 
   namespace :api, defaults: { format: :json} do
     namespace :v1 do  
@@ -11,6 +19,12 @@ Rails.application.routes.draw do
         resources :search, only: :index
         resources :albums, only: :show do
           resources :recently_heards, only: :create
+          concerns :favoritable, favoritable_type: 'Album'
+        end
+        resources :favorites, only: :index
+
+        resources :songs, only: [] do
+          concerns :favoritable, favoritable_type: 'Song'
         end
     end 
   end
