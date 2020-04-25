@@ -28,4 +28,6 @@ Rails.application.routes.draw do
         end
     end 
   end
+  1
+get "*path", to: "home#index", :constraints => lambda{|req| req.path !~ /\.(png|jpg|js|css|json)$/ }
 end
