@@ -1,11 +1,16 @@
-import React, { Fragment} from 'react';
+import React, {Fragment} from 'react';
+import SectionWrapper from '../../components/common/section_wrapper'
+import Discovery from '../../components/discovery';
+import NavbarFooter from '../../components/common/navbar_footer';
 
-const Discovery = () => {
-    return(
-        <Fragment>
-            <h2 >Discovery Screen </h2>
-        </Fragment>
-    )
+const DiscoveryScreen = () => {
+  return(
+    <Fragment>
+      <SectionWrapper>
+        <Discovery />
+      </SectionWrapper>
+      <NavbarFooter />
+    </Fragment>
+  );
 }
-
-export default Discovery;
+export default DiscoveryScreen;
