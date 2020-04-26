@@ -1,17 +1,19 @@
-# README
+# README << SPOTCODE >>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Passo a passo para baixar e rodar esta aplicação
 
-Things you may want to cover:
+![](dashboard.png)
 
-* Ruby version
 
-* System dependencies
+Coisas que você deve saber sobre este PWA:
 
-* Configuration
+* Ruby version - 2.5.1
 
-* Database creation
+* System dependencies - Subsistema Ubuntu no Windows
+
+* Configuration - tudo ja está previamente configurado
+
+* Database creation - db:migrate
 
 * Database initialization
 
@@ -21,4 +23,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+
