@@ -1,4 +1,4 @@
-# README << SPOTCODE >>
+# << SPOTCODE >>
 
 Passo a passo para baixar e rodar esta aplicação
 
