@@ -1,21 +1,41 @@
-import React, {Fragment} from 'react';
-import { Image, Heading } from 'react-bulma-components';
+import React, { Fragment, useState, useEffect } from 'react';
+import { Heading, Columns, Image } from 'react-bulma-components';
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
+import AlbumsService from '../../services/albums';
+import { useParams } from 'react-router-dom';
+import Musics from '../musics';
 
 const DivVSpaced = styled.div`
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 `
 
-const Album = (props) => {
-  return(
-    <Link to={`/album/${props.id}`}>
-      <Image src={props.cover_url}/>
-      <DivVSpaced>
-        <Heading size={6} className='has-text-white'>{props.title}</Heading>
-        <Heading size={6} className='has-text-white' subtitle>{props.artist_name}</Heading>
-      </DivVSpaced>
-    </Link>
+const Albums = () => {
+  let { id } = useParams();
+  const [album, setAlbum] = useState([]);
+
+  async function fetchAlbum() {
+    const response = await AlbumsService.show(id);
+    setAlbum(response.data);
+  }
+
+  useEffect(() => {
+    fetchAlbum();
+  }, [])
+
+  return (
+    <Fragment>
+      <Columns className='is-vcentered is-mobile is-centered'>
+        <Columns.Column desktop={{size: 3}} className='has-text-centered'>
+          <Image src={album.cover_url}/>
+          <DivVSpaced>
+            <Heading size={5} className='has-text-white'>{album.title}</Heading>
+            <Heading size={6} subtitle className='has-text-white'>{album.artist_name}</Heading>
+          </DivVSpaced>
+        </Columns.Column>
+      </Columns>
+      <Musics songs={album.songs || []}/>
+    </Fragment>
   );
 }
-export default Album;
+export default Albums;

@@ -1,4 +1,4 @@
-json.tilte @album.title
+json.title @album.title
 json.cover_url url_for(@album.cover) 
 
 
