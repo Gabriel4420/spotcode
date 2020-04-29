@@ -9,33 +9,39 @@ const NavbarWithBorder = styled(Navbar)`
   border-top-color: white !important;
   border-top-style: solid;
   border-top-width: 1px;
+  padding-top: 10px;
+  
+  
+  
 `
 const ColumnsFullWidth = styled(Columns)`
-  width: 100%;
-  padding-top: 10px;
+width: 95%;
+padding-top: 1px;
+  
+  
 `
 
 const NavbarFooter = () => {
     return (
         <Fragment>
             <NavbarWithBorder fixed='bottom' color='dark'>
-                <Container>
+                <Container className='container is-fluid'>
                     <ColumnsFullWidth className='is-mobile is-vcentered'>
                         <Columns.Column className='has-text-centered'>
                             <Link to='/discovery' className='has-text-white'>
-                                <FaHome size='25px' />
+                                <FaHome size='17px' />
                             </Link>
                         </Columns.Column>
 
                         <Columns.Column className='has-text-centered'>
                             <Link to='/search' className='has-text-white'>
-                                <FaSearch size='25px' />
+                                <FaSearch size='17px' />
                             </Link>
                         </Columns.Column>
 
                         <Columns.Column className='has-text-centered'>
                             <Link to='/favorites' className='has-text-white'>
-                                <FaHeart size='25px' />
+                                <FaHeart size='17px' />
                             </Link>
                         </Columns.Column>
                     </ColumnsFullWidth>

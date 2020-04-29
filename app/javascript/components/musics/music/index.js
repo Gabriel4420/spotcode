@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Heading, Columns } from 'react-bulma-components';
 import styled from 'styled-components'
 import { FaPlayCircle, FaStopCircle } from "react-icons/fa";
+import Favorite from '../../common/favorite';
 
 const MusicSeparator = styled.hr`
  height: 1px;
@@ -17,7 +18,7 @@ const Music = (props) => {
 
    let playingButton;
 
-   if(props.playing)
+   if (props.playing)
       playingButton = <FaStopCircle size='45px' className='has-text-white' onClick={() => props.setPlaying([])} />
    else
       playingButton = <FaPlayCircle size='45px' className='has-text-white' onClick={() => props.setPlaying(props.song)} />
@@ -33,13 +34,13 @@ const Music = (props) => {
                   <Columns.Column desktop={{ size: 8 }} mobile={{ size: 8 }}>
                      <Heading size={5} className='has-text-white'>
                         {props.song.title}
-               </Heading>
+                     </Heading>
                      <CustomSubHeading size={6} className='has-text-white' subtitle>
                         {props.song.artist_name}
-               </CustomSubHeading>
+                     </CustomSubHeading>
                   </Columns.Column>
                   <Columns.Column desktop={{ size: 4 }} mobile={{ size: 4 }} className='is-pulled-right has-text-right'>
-                     {/* Favorite */}
+                     <Favorite id={props.song.id} kind='songs' favored={props.song.favorite} />
                   </Columns.Column>
                </Columns>
                <MusicSeparator />

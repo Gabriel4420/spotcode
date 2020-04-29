@@ -9,6 +9,7 @@ json.artists @favorite_artists.each do |artist|
   json.id artist.id
   json.name artist.name
   json.photo_url url_for(artist.photo)
+  json.favorite current_user.is_favorite? 'Song', song.id
 end
  
 json.albums @favorite_albums.each do |album|
