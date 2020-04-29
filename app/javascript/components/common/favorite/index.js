@@ -23,6 +23,8 @@ const Favorite = (props) => {
         setFavored(true);
     }
 
+    
+
     return (
         <Fragment>
             {FavoredButton}

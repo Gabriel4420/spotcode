@@ -9,14 +9,15 @@ const NavbarWithBorder = styled(Navbar)`
   border-top-color: white !important;
   border-top-style: solid;
   border-top-width: 1px;
-  padding-top: 10px;
+  border-margin-bottom-width:10px;
+  
   
   
   
 `
 const ColumnsFullWidth = styled(Columns)`
-width: 95%;
-padding-top: 1px;
+width: 100%;
+padding-top: 15px;
   
   
 `

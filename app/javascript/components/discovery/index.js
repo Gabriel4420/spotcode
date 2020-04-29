@@ -5,7 +5,7 @@ import { Columns, Heading } from 'react-bulma-components';
 import AlbumsService from '../../services/albums';
 
 const DivVSpaced = styled.div`
-  margin-top: 50px;
+  margin-top: 30px;
 `
 
 const Discovery = () => {
