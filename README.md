@@ -24,3 +24,6 @@ Coisas que você deve saber sobre este PWA:
 * Deployment instructions
 
 
+Para rodar o servidor, basta digitar no console, rails s
+
+
